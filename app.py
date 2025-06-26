@@ -129,4 +129,3 @@ if "generated_password" in st.session_state:
                 st.markdown(
                     f"<span style='color:{color}; font-family:monospace;'>{label}</span>", unsafe_allow_html=True
                 )
-

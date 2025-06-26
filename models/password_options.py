@@ -13,4 +13,3 @@ class PasswordOptions(BaseModel):
         if value < 8:
             raise ValueError("Password length must be at least 8 characters long.")
         return value
-

@@ -8,4 +8,3 @@ if opts:
     strength, label = evaluate_strength(password=password)
 
     print(f"Generated Password: {password}\nStrength: {label}, {strength}")
-
