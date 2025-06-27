@@ -5,7 +5,6 @@ LABEL_COLORS = {
     "Very Weak": "purple",
     "Weak": "red",
     "Decent": "orange",
-    "Good": "gold",
     "Strong": "#5f13ff",
     "Fantastic": "#6eff00"
 }
@@ -31,20 +30,18 @@ def evaluate_strength(password: str) -> tuple[int, str]:
             checks["symbols"] += 1
 
     has_length = checks["length"] >= 12
-    has_upper = checks["uppercase_chars"] > 0
-    has_lower = checks["lowercase_chars"] > 0
+    has_upper_and_lower = checks["uppercase_chars"] > 0 and checks["lowercase_chars"] > 0
     has_numbers = checks["numbers"] > 0
     has_symbols = checks["symbols"] > 0
 
-    strength = sum([has_length, has_upper, has_lower, has_numbers, has_symbols])
+    strength = sum([has_length, has_upper_and_lower, has_numbers, has_symbols])
 
     strength_labels = {
         0: "Very Weak",
         1: "Weak",
         2: "Decent",
-        3: "Good",
-        4: "Strong",
-        5: "Fantastic",
+        3: "Strong",
+        4: "Fantastic",
     }
 
     return strength, strength_labels[strength]
