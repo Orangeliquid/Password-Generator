@@ -12,10 +12,9 @@ SYMBOLS = string.punctuation
 def generate_password(options: PasswordOptions) -> str:
     characters = ""
 
-    if options.include_uppercase_letters:
-        characters += UPPERCASE
-    if options.include_lowercase_letters:
-        characters += LOWERCASE
+    characters += UPPERCASE
+    characters += LOWERCASE
+
     if options.include_numbers:
         characters += NUMBERS
     if options.include_symbols:
