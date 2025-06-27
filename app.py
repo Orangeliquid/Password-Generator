@@ -48,16 +48,6 @@ if "history" not in st.session_state:
 left_column, right_column = st.columns(2)
 
 with right_column:
-    uppercase_prompt = st.checkbox(
-        "Uppercase Letters?",
-        value=True,
-        on_change=clear_generate
-    )
-    lowercase_prompt = st.checkbox(
-        "Lowercase Letters?",
-        value=True,
-        on_change=clear_generate
-    )
     numbers_prompt = st.checkbox(
         "Include Numbers?",
         value=True,
@@ -82,8 +72,6 @@ with left_column:
 
 opts = PasswordOptions(
     length=length,
-    include_uppercase_letters=uppercase_prompt,
-    include_lowercase_letters=lowercase_prompt,
     include_numbers=numbers_prompt,
     include_symbols=symbols_prompt,
 )
